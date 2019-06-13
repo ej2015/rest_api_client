@@ -7,7 +7,7 @@ A client to subclass from, this gem implements the common HTTP verbs using Farad
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'vendor_api_client'
+gem 'rest_api_client'
 ```
 
 And then execute:
@@ -16,11 +16,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install vendor_api_client
+    $ gem install rest_api_client
 
 ## Usage
 
-Create your own client by subclassing VendorApiClient. Then you can use the HTTP verbs like this:
+Create your own client by subclassing RrestApiClient. Then you can use the HTTP verbs like this:
 
 ```
 post(path, body: payload, params: params)
@@ -35,7 +35,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/ej2015/vendor_api_client.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ej2015/rest_api_client.
 
 ## License
 

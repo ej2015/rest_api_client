@@ -1,4 +1,4 @@
-module VendorApiClient 
+module RestApiClient 
   module Configuration
     URL =INSURER_CONFIG["vendor"]["url"].freeze
 

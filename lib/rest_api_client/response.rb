@@ -1,4 +1,4 @@
-module VendorApiClient 
+module RestApiClient 
   module Response
 
     def self.create(response)

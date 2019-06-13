@@ -1,8 +1,8 @@
-module VendorApiClient
+module RestApiClient
   class Client
-    include VendorApiClient::Request
-    include VendorApiClient::Response
-    include VendorApiClient::Configuration
+    include RestApiClient::Request
+    include RestApiClient::Response
+    include RestApiClient::Configuration
 
     class << self
       attr_accessor :url

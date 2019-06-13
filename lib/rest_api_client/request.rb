@@ -1,4 +1,4 @@
-module VendorApiClient 
+module RestApiClient 
     module Request
 
 			[:get, :post, :put, :delete].each do |method|
@@ -16,7 +16,7 @@ module VendorApiClient
         end
         response = Response.create(response) 
 			rescue Exception => e
-			 Mailer.insurer_api_exception(e).deliver_now	
+        #handle exception
 			end
 
     end
