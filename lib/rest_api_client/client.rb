@@ -1,26 +1,24 @@
+require 'faraday'
+require 'faraday_middleware'
+require_relative 'request'
+require_relative 'configuration'
+require_relative 'response'
+require_relative 'error'
+
 module RestApiClient
   class Client
     include RestApiClient::Request
     include RestApiClient::Response
     include RestApiClient::Configuration
 
-    class << self
-      attr_accessor :url
-    end 
-
     attr_accessor :options, :connection
 
-    def initialize (options = {})
+    def initialize (options = {}, &block)
       @options = default_options.merge(options)
-      @connection = Faraday.new(@options) do |faraday|
-        faraday.request  :json
-        faraday.request  :url_encoded
-        faraday.headers[:Accept] = 'application/json'
-        faraday.headers['Content-Type'] = 'application/json'
-        #faraday.options[:timeout] = 300
-        faraday.adapter  Faraday.default_adapter
-      end
+      middleware_config = block_given? ? block : default_middleware_config
+      @connection = Faraday.new(@options, &middleware_config) 
     end
+
   end
 
 end

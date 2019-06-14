@@ -10,12 +10,13 @@ module RestApiClient
       def request(method, path, body, params, opts)
         response = connection.send(method) do | request|
 					request.headers = request.headers.merge(opts[:headers]) if opts[:headers].present?
-          request.path = URI.encode(path)
+          request.path = path
 				  request.params = params if params.present?
           request.body = body if body.present?
         end
         response = Response.create(response) 
 			rescue Exception => e
+        
         #handle exception
 			end
 

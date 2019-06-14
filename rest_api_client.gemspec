@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["zorro.ej@gmail.com"]
 
   spec.summary       = %q{A small client to reduce boilerplate code}
-  spec.description   = %q{Subclass this client and jump into your bizlogic straight away without worrying the HTTP call implementation.}
+  spec.description   = %q{Subclass this client and jump into the real work of creating your awesome app straight away without worrying the nitty-gritties of HTTP call implementation.}
   spec.homepage      = "https://github.com/ej2015/rest_api_client"
   spec.license       = "MIT"
 
@@ -24,7 +24,11 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "faraday", "~> 0.15.3"
+  spec.add_dependency "faraday_middleware", "~> 0.13.1"
+
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+
 end

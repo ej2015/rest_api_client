@@ -1,5 +1,7 @@
+$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+
 require "bundler/setup"
-require "vendor_api_client"
+require "rest_api_client"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -10,5 +12,20 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+end
+
+class Client < RestApiClient::Client
+  def initialize(options = {}, &block)
+    @url = 'http://mysite.com/api'
+    super
+  end
+
+  def quotes(query)
+    get('quotes', params: query)
+  end
+
+  def buy(payload)
+    post('/cars', body: payload)
   end
 end
