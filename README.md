@@ -20,13 +20,34 @@ Or install it yourself as:
 
 ## Usage
 
-Create your own client by subclassing RrestApiClient. Then you can use the HTTP verbs like this:
+Create your own client by subclassing RrestApiClient. Provide your host url in the initializer.
 
 ```
-post(path, body: payload, params: params)
+class Client < RestApiClient::Client
+  def initialize(options = {}, &block)
+    @url = 'http://my.site.com'
+    super
+  end
+  
+  def friends(queries)
+    get('/friends', params: queries)
+  end
+
+  ## you code here...
+
+end
+```
+
+Then you can use the HTTP verbs like this:
+
+```
+Client.new.friends({ gender: 'm' })
+
+##= curl http://my.site.com/friends?gender=m
 
 ```
 
+By default it sends and receives JSON. You can override it by passing in a block. See [Faraday configurations](https://github.com/lostisland/faraday) for details
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
