@@ -43,7 +43,7 @@ Then you can use the HTTP verbs like this:
 ```
 Client.new.friends({ gender: 'm' })
 
-##= curl http://my.site.com/friends?gender=m
+##== curl http://my.site.com/friends?gender=m
 
 ```
 
