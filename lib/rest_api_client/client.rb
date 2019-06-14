@@ -1,5 +1,6 @@
 require 'faraday'
 require 'faraday_middleware'
+require 'active_support/core_ext/object/blank.rb'
 require_relative 'request'
 require_relative 'configuration'
 require_relative 'response'

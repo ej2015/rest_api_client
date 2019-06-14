@@ -14,10 +14,8 @@ module RestApiClient
 				  request.params = params if params.present?
           request.body = body if body.present?
         end
+        puts connection.params
         response = Response.create(response) 
-			rescue Exception => e
-        
-        #handle exception
 			end
 
     end

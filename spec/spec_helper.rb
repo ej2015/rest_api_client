@@ -17,15 +17,15 @@ end
 
 class Client < RestApiClient::Client
   def initialize(options = {}, &block)
-    @url = 'http://mysite.com/api'
+    @url = 'http://mysite.com'
     super
   end
 
   def quotes(query)
-    get('quotes', params: query)
+    get('/api/quotes', params: query)
   end
 
   def buy(payload)
-    post('/cars', body: payload)
+    post('/api/cars', body: payload)
   end
 end
