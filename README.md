@@ -1,6 +1,6 @@
 # VendorApiClient
 
-A client to subclass from, this gem implements the common HTTP verbs using Faraday to help reduce boiler plates.
+A base class implemented with Faraday, this gem provides some of the common features typically needed in a REST api client.
 
 ## Installation
 

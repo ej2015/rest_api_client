@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["zorro.ej@gmail.com"]
 
   spec.summary       = %q{A small client to reduce boilerplate code}
-  spec.description   = %q{Subclass this client and jump into the real work of creating your awesome app straight away without worrying the nitty-gritties of HTTP call implementation.}
+  spec.description   = %q{Start creating your awesome app straight away without worrying the nitty-gritties of HTTP call implementation.}
   spec.homepage      = "https://github.com/ej2015/rest_api_client"
   spec.license       = "MIT"
 
