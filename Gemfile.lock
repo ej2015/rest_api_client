@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rest_api_client (0.1.0)
+    rest_api_client (0.2.0)
       activesupport (>= 4.2)
       faraday (~> 0.15.3)
       faraday_middleware (~> 0.13.1)
