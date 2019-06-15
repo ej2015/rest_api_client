@@ -2,6 +2,10 @@
 
 A base class implemented with Faraday, this gem provides some of the common features typically needed in a REST api client.
 
+It only handles JSON requests/payloads.
+
+It is not meant to be a flexible HTTP client library. Use it if the defaults work for you. Otherwise it might be better to use something like Faraday directly.
+
 ## Installation
 
 Add this line to your application's Gemfile:
