@@ -1,3 +1,5 @@
+require 'logger'
+
 module RestApiClient 
   module Configuration
 
@@ -7,7 +9,7 @@ module RestApiClient
       { 
         url:     url
       }
-    end 
+    end
 
     def default_middleware_config 
       lambda {|faraday|
@@ -15,9 +17,20 @@ module RestApiClient
         faraday.request  :url_encoded
         faraday.headers[:Accept] = 'application/json'
         faraday.headers['Content-Type'] = 'application/json'
+        faraday.response :logger, logger
         #faraday.options[:timeout] = 300
         faraday.adapter  Faraday.default_adapter
       }
+    end
+
+    def logger
+      log_output = $stdout
+      if defined? Rails
+        log_out = 'logs/api_logs.txt' unless Rails.env.development?
+      end
+      logger = Logger.new log_output
+      logger.level = Logger::INFO
+      logger
     end
 
   end

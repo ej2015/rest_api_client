@@ -4,7 +4,5 @@ require 'rest_api_client/client'
 Dir['./rest_api_client'].each { |f| puts f }
 
 module RestApiClient
-  def self.client(options = {})
-    Client.new(options)
-  end
+
 end

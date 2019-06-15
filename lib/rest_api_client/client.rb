@@ -1,6 +1,6 @@
 require 'faraday'
 require 'faraday_middleware'
-require 'active_support/core_ext/object/blank.rb'
+require 'active_support/core_ext/object/blank'
 require_relative 'request'
 require_relative 'configuration'
 require_relative 'response'
@@ -19,7 +19,6 @@ module RestApiClient
       middleware_config = block_given? ? block : default_middleware_config
       @connection = Faraday.new(@options, &middleware_config) 
     end
-
   end
 
 end
