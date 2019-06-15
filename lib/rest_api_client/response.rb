@@ -5,20 +5,10 @@ module RestApiClient
       status = response.status
       case status
       when 200 
-        if response.body.present?
-          JSON.parse response.body
-        else
-          response.body
-        end
+        response.body
       else
-        if response.body.present?
-          JSON.parse response.body
-        else
-          response.body
-        end
+        raise  RestApiClient::Error.new(response.body)
       end
-    rescue JSON::ParserError => e
-      { "error" => response.body }
     end
   end
 end

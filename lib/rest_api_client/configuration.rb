@@ -15,8 +15,7 @@ module RestApiClient
       lambda {|faraday|
         faraday.request  :json
         faraday.request  :url_encoded
-        faraday.headers[:Accept] = 'application/json'
-        faraday.headers['Content-Type'] = 'application/json'
+        faraday.response :json
         faraday.response :logger, logger
         #faraday.options[:timeout] = 300
         faraday.adapter  Faraday.default_adapter
